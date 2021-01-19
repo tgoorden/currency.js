@@ -218,6 +218,15 @@ currency.prototype = {
    */
   toJSON() {
     return this.value;
+  },
+  
+  /**
+   *
+   * @returns {boolean}
+   */
+  equals (number) {
+    let { _settings, intValue } = this;
+    return currency(number, _settings).intValue === intValue;
   }
 
 };
